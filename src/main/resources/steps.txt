@@ -1,0 +1,10 @@
+- find recursive jacobian of functions
+- create classes for LevenbergMarquardtOptimizer
+- find most recent shock (optional)
+- get tradeable assets
+- get historical data for each asset
+- get DB up
+- find alpha/beta parameters for each asset; store in DB
+- get residual error for each asset; store in DB
+
+- if long term residual error >> recorded error, recalibrate alpha/beta

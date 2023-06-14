@@ -1,0 +1,23 @@
+logging:
+  level:
+    com:
+      algo:
+        trading:
+          crypto:
+            backtesting: INFO
+
+spring:
+  datasource:
+    url: jdbc:oracle:thin:@${ORACLE_DATABASE_CONNECTION_STRING}
+    username: ADMIN
+    password: ${ORACLE_DATABASE_PASSWORD}
+    driver-class-name: oracle.jdbc.OracleDriver
+    hikari:
+      minimumIdle: 5
+      maximumPoolSize: 20
+      idleTimeout: 30000
+      maxLifetime: 2000000
+      connectionTimeout: 30000
+      poolName: HikariPoolCrypto
+  jpa:
+    database-platform: org.hibernate.dialect.OracleDialect
