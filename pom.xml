@@ -7,7 +7,7 @@
     <version>1.0.0</version>
     <name>ma-modelling</name>
     <description>Calculation of DEMA and TEMA modeling parameters at various periods for time series data.</description>
-    <packaging>jar</packaging>
+    <url>https://github.com/ngchinhow/ma-modelling</url>
 
     <licenses>
         <license>
