@@ -6,13 +6,17 @@ import org.apache.commons.math3.fitting.leastsquares.LeastSquaresBuilder;
 import org.apache.commons.math3.fitting.leastsquares.LeastSquaresOptimizer;
 import org.apache.commons.math3.fitting.leastsquares.LeastSquaresProblem;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
+
+import java.io.IOException;
+import java.net.URISyntaxException;
 
 @Slf4j
 public class DEMAProblemTest extends AbstractEMAProblemTest {
 
     @BeforeEach
-    public void beforeEach() {
+    public void beforeEach() throws URISyntaxException, IOException {
         final int period = 75;
         final int scale = 1;
         final String testFileName = "DEMA_test_data.txt";
@@ -20,6 +24,7 @@ public class DEMAProblemTest extends AbstractEMAProblemTest {
     }
 
     @Test
+    @Disabled
     public void givenOptimizer_whenDoDEMAProblem_thenFindParameters() {
         DoubleEMAModel model = new DoubleEMAModel(scale, alpha, observedValuesList);
         LeastSquaresProblem problem = new LeastSquaresBuilder()

@@ -2,9 +2,7 @@ package io.github.ngchinhow.modelling.validator;
 
 import org.apache.commons.math3.fitting.leastsquares.ParameterValidator;
 import org.apache.commons.math3.linear.RealVector;
-import org.springframework.stereotype.Service;
 
-@Service
 public class BoundedParameterValidator implements ParameterValidator {
 
     @Override

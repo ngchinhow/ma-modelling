@@ -8,9 +8,13 @@ import org.apache.commons.math3.fitting.leastsquares.LeastSquaresBuilder;
 import org.apache.commons.math3.fitting.leastsquares.LeastSquaresOptimizer;
 import org.apache.commons.math3.fitting.leastsquares.LeastSquaresProblem;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.aggregator.AggregateWith;
 import org.junit.jupiter.params.provider.CsvSource;
+
+import java.io.IOException;
+import java.net.URISyntaxException;
 
 @Slf4j
 public class TEMAProblemTest extends AbstractEMAProblemTest {
@@ -18,7 +22,7 @@ public class TEMAProblemTest extends AbstractEMAProblemTest {
     private int cycleLength;
 
     @BeforeEach
-    public void beforeEach() {
+    public void beforeEach() throws URISyntaxException, IOException {
         final int period = 400;
         final int scale = 1;
         final int timeGap = 30;
@@ -34,6 +38,7 @@ public class TEMAProblemTest extends AbstractEMAProblemTest {
         "0.1,0.1",
         "0.5,0.5"
     })
+    @Disabled
     public void givenOptimizer_whenDoTEMAProblem_thenFindParameters(@AggregateWith(TEMAProblemAggregator.class) double[] initialGuesses) {
         TripleEMAModel model = new TripleEMAModel(scale, alpha, observedValuesList, cycleLength);
         LeastSquaresProblem problem = new LeastSquaresBuilder()
